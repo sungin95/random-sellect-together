@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <h1>{{ user.username}}님 환영합니다.</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">user</th>
+        <th scope="col">email</th>
+        <th scope="col">last_login</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <a href="{% url 'accounts:detail' user.pk %}">{{ user.username}}</a>
+        </th>
+        <td>{{ user.email}}</td>
+        <td>{{ user.last_login}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock content %}
